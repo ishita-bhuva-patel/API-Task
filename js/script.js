@@ -10,7 +10,7 @@ $(window).on("load", () => {
 
 $("#findNeighbour").click(() => {
     $.ajax({
-        url: "PHP/countryNeighbour.php",
+        url: "./PHP/countryNeighbour.php",
         type: "POST",
         dataType: "json",
         data: {
