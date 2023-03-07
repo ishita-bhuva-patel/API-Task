@@ -1,64 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="venders/bootstrap/bootstrap.min.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
+        <title>API</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="venders/bootstrap/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
-    <script src="venders/jquery/jquery.min.js"></script>
-    <script src="venders/bootstrap/popper.min.js"></script>
-    <script src="venders/bootstrap/bootstrap.min.js"></script>
-    <script src="js/script.js"></script>
-    <link rel="stylesheet" type="text/css" href="venders/leaflet/leaflet.css">
-    <script src="venders/leaflet/leaflet.js"></script>
-    <link href="fonts/fonts.css" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="favicon.svg">
-    <title>Gazetteer</title>
-</head>
-
-<body>
-
-    <header>
-        <div class="container">
-            <div class="ge-header-data">
-                <a href="javascript:void()">Gazetteer</a>
-                <div class="dropdown">
-                    <button class="btn dropdown-toggle" type="button" id="selectedCountry" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown button
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdowMenu">
-                        <input type="text" placeholder="Search.." id="searchCountry" onkeyup="filterFunction()" />
-
-                        <div class="ge-country-list" id="countryList">
+    <body>
+        <header></header>
+        <main>
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="api-section">
+                                <h4>Country Code</h4>
+                                <div class="d-flex">
+                                    <input
+                                        id="countryName"
+                                        name=""
+                                        value=""
+                                        class="form-control"
+                                        placeholder="Country Name"
+                                    />
+                                    <button id="findCountryCode" class="btn btn-primary ml-3">Find</button>
+                                </div>
+                                <h2 id="countryCodeRes"></h2>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </header>
-    <main>
-        <section class="ge-map" id="ge-map">
-        </section>
-        <div class="ge-country-data">
-            <h3 id="name" class="text-center mb-2"></h3>
-            <div class="position-relative">
-                <span id="flag" class="ge-flag"></span>
-                <p>Continent Name: <span id="continent"></span> </p>
-                <p>Country Code: <span id="code"></span></p>
-                <p>Capital: <span id="capital"></span></p>
-                <p>Population: <span id="population"></span></p>
-                <p>Currency Code: <span id="currency"></span></p>
-                <p>Temperature: <span id="temperature"></span> °C</p>
-                <p>Area: <span id="area"></span> Km<sup>2</sup></p>
-                <p>Language: <span id="language"></span></p>
-                <p>Wikipedia <span id="country_wiki"></span></p>
-            </div>
-        </div>
-    </main>
-    <div id="preloader"></div>
-
-</body>
-
+            </section>
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="api-section">
+                                <h4>Country Neighbour</h4>
+                                <div class="d-flex">
+                                    <input
+                                        id="countryCode"
+                                        name=""
+                                        value=""
+                                        class="form-control"
+                                        placeholder="Country Code"
+                                    />
+                                    <button id="findNeighbour" class="btn btn-primary ml-3">Find</button>
+                                </div>
+                                <ul id="countryNeighboursListRes"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="api-section">
+                                <h4>Find Street Name</h4>
+                                <div class="d-flex">
+                                    <input
+                                        id="latitude"
+                                        name=""
+                                        value=""
+                                        class="form-control"
+                                        placeholder="latitude"
+                                        type="number"
+                                        step="0.1"
+                                    />
+                                    <input
+                                        id="longitude"
+                                        name=""
+                                        value=""
+                                        class="form-control"
+                                        placeholder="longitude"
+                                        type="number"
+                                        step="0.1"
+                                    />
+                                    <button id="findAddress" class="btn btn-primary ml-3">Find</button>
+                                </div>
+                                <h5 id="addressListRes"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <div id="preloader"></div>
+        <script src="venders/jquery/jquery.min.js"></script>
+        <script src="venders/bootstrap/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
 </html>
