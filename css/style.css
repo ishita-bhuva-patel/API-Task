@@ -1,3 +1,33 @@
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+        "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 400;
+    color: black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+li,
+ul {
+    margin: 0;
+    padding: 0;
+    color: black;
+    text-decoration: none;
+    list-style: none;
+}
+
 #preloader {
     position: fixed;
     top: 0;
@@ -15,7 +45,7 @@
     top: calc(50% - 30px);
     left: calc(50% - 30px);
     border: 6px solid #f2f2f2;
-    border-top: 6px solid #56829e;
+    border-top: 6px solid #000;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -47,18 +77,147 @@
     }
 }
 
-.api-section {
-    border: 1px solid black;
-    padding: 25px;
-    margin: 15px 0;
+header {
+    background-color: black;
+    padding: 10px 0;
+    position: fixed;
+    z-index: 11111;
+    top: 0;
+    width: 100%;
 }
-
-/* section {
-    height: 100vh;
+main {
+    margin-top: 56px;
+}
+.ge-header-data {
     display: flex;
     align-items: center;
-} */
+    justify-content: space-between;
+}
 
-.btn-primary {
-    width: 120px;
+.ge-header-data a {
+    color: white;
+    font-size: 24px;
+}
+
+.dropdown .btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+.dropdown .btn:focus {
+    box-shadow: none;
+    outline: none;
+}
+.dropdown-menu {
+    max-height: 200px;
+    overflow-y: hidden;
+    box-shadow: 0px 0px 20px 20px rgb(0 0 0 / 10%);
+    border: none;
+    z-index: 11111;
+}
+
+.dropdown-menu a {
+    color: black;
+    font-size: 16px;
+}
+.dropdown-menu input {
+    padding: 5px 0 10px 10px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+.dropdown-menu input:focus-visible,
+.dropdown-menu input:focus,
+.dropdown-menu input:visited,
+.dropdown-menu input:active,
+.dropdown-menu input:focus-within,
+.dropdown-menu input:target {
+    outline: none;
+    background-color: transparent !important;
+}
+.ge-country-list {
+    overflow-y: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    max-height: 200px;
+    margin-top: 5px;
+}
+
+.ge-country-list::-webkit-scrollbar {
+    display: none;
+}
+
+.ge-map {
+    height: 350px;
+    background-color: #aad3df !important;
+}
+
+.ge-country-data {
+    padding: 20px;
+    z-index: 1111;
+    position: relative;
+    right: auto;
+    top: auto;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    color: black;
+}
+.ge-flag {
+    font-family: "Noto Color Emoji", sans-serif;
+    font-size: 65px;
+    position: absolute;
+    right: 2%;
+    top: 2%;
+}
+.ge-country-data a {
+    text-decoration: underline;
+    color: #ffc300;
+}
+.ge-country-data p {
+    margin-bottom: 10px;
+}
+.ge-country-data p span {
+    word-wrap: break-word;
+    color: #ffc300;
+}
+.leaflet-popup-close-button {
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .ge-country-data {
+        background-color: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 80px;
+        right: 2%;
+        min-width: 270px;
+        max-width: 270px;
+        color: white;
+    }
+    main {
+        margin-top: 0;
+    }
+    .ge-flag {
+        font-size: 45px;
+        position: relative;
+        right: auto;
+        top: auto;
+    }
+    .ge-map {
+        height: calc(100vh - 56px);
+    }
+    header {
+        position: relative;
+    }
+    .ge-country-data p,
+    .ge-country-data h3 {
+        color: white;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .ge-country-data {
+        min-width: 370px;
+        max-width: 370px;
+    }
 }
